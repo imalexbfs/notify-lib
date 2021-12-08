@@ -219,6 +219,7 @@ function prompt(title, text)
 	Prompt.AutomaticSize = Enum.AutomaticSize.Y
 	Prompt.Container.AutomaticSize = Enum.AutomaticSize.Y
 	Prompt.Container.Body.AutomaticSize = Enum.AutomaticSize.Y
+	Prompt.Container.Body.Content.AutomaticSize = Enum.AutomaticSize.Y
 
 	Prompt.Container.Top.Exit.Button.MouseButton1Click:Connect(function()
 		T:Create(Prompt.Container, t, {Position = UDim2.new(1.15, 0, 0, 0)}):Play()
@@ -236,5 +237,7 @@ local lib = {}
 function lib.prompt(title, description)
 	prompt(title, description)
 end
+
+prompt('Notification Library', 'Loaded. BoredStuff2 on github.')
 
 return lib
