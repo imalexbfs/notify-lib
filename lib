@@ -238,6 +238,8 @@ function lib.prompt(title, description)
 	prompt(title, description)
 end
 
-prompt('Notification Library', 'Loaded. BoredStuff2 on github.')
+if not isExistance then
+	prompt('Notification Lib', 'Loaded. BoredStuff2 on github.')
+end
 
 return lib
