@@ -203,10 +203,10 @@ local T = game:GetService('TweenService')
 local t = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
 local tp = NotificationParent
 
-function prompt(title, text)
+function prompt(title, text, closeTime)
 	local Prompt = Notification:Clone()
 	local Sound = Instance.new('Sound', Notification)
-	
+
 	Prompt.Visible = true
 	Prompt.Container.Top.Title.Text = title
 	Prompt.Container.Body.Content.Text = text
@@ -216,7 +216,7 @@ function prompt(title, text)
 	Sound:Play()
 
 	T:Create(Prompt.Container, t, {Position = UDim2.new(0, 0, 0, 0)}):Play()
-	
+
 	-- auto size
 	Prompt.AutomaticSize = Enum.AutomaticSize.Y
 	Prompt.Container.AutomaticSize = Enum.AutomaticSize.Y
@@ -228,16 +228,30 @@ function prompt(title, text)
 		wait(0.48)
 		Prompt:Destroy()
 	end)
-	
+
 	wait(1)
-	
+
 	Sound:Destroy()
+	
+	spawn(function()
+		if typeof(closeTime) == "number" then
+			task.wait(closeTime)
+			local s = pcall(function()
+				T:Create(Prompt.Container, t, {Position = UDim2.new(1.15, 0, 0, 0)}):Play()
+				wait(0.48)
+				Prompt:Destroy()
+			end)
+			if not s then
+				print('Already closed.')
+			end
+		end
+	end)
 end
 
 local lib = {}
 
-function lib.prompt(title, description)
-	prompt(title, description)
+function lib.prompt(title, description, closeTime)
+	prompt(title, description, closeTime)
 end
 
 return lib
