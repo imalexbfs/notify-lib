@@ -214,6 +214,11 @@ function prompt(title, text)
 	Sound:Play()
 
 	T:Create(Prompt.Container, t, {Position = UDim2.new(0, 0, 0, 0)}):Play()
+	
+	-- auto size
+	Prompt.AutomaticSize = Enum.AutomaticSize.Y
+	Prompt.Container.AutomaticSize = Enum.AutomaticSize.Y
+	Prompt.Container.Body.AutomaticSize = Enum.AutomaticSize.Y
 
 	Prompt.Container.Top.Exit.Button.MouseButton1Click:Connect(function()
 		T:Create(Prompt.Container, t, {Position = UDim2.new(1.15, 0, 0, 0)}):Play()
@@ -225,8 +230,6 @@ function prompt(title, text)
 	
 	Sound:Destroy()
 end
-
--- UI LIB
 
 local lib = {}
 
