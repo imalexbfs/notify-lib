@@ -239,3 +239,4 @@ function lib.prompt(title, description)
 end
 
 return lib
+print('Notification Lib: BoredStuff2 on GitHub')
