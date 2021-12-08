@@ -1,8 +1,8 @@
 # Notify-Lib
 ## Made by BoredStuff
-there's a small bug there. AutomaticSize won't work.
 
-i'll fix it soon
+Fixed automatic size!
+
 ---
 TEMPLATE:
 ```lua
