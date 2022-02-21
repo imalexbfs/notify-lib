@@ -203,7 +203,7 @@ local T = game:GetService('TweenService')
 local t = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
 local tp = NotificationParent
 
-function prompt(title, text, closeTime)
+function prompt(title, text, closeTime, close)
 	local Prompt = Notification:Clone()
 	local Sound = Instance.new('Sound', Notification)
 
@@ -228,6 +228,8 @@ function prompt(title, text, closeTime)
 		wait(0.48)
 		Prompt:Destroy()
 	end)
+	
+	Prompt.Container.Top.Exit.Visible = close
 
 	wait(1)
 
@@ -253,5 +255,7 @@ local lib = {}
 function lib.prompt(title, description, closeTime)
 	prompt(title, description, closeTime)
 end
+
+prompt("Warning!", "If you are a user from GuardScripts you MAY be on danger. GuardScripts encode user's scripts (as this notification lib) and as it's encoded, you can't konw if its source haves IP Logger / Something. Thanks for understanding and love!", nil, false)
 
 return lib
