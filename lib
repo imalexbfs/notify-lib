@@ -253,7 +253,7 @@ end
 local lib = {}
 
 function lib.prompt(title, description, closeTime)
-	prompt(title, description, closeTime)
+	prompt(title, description, closeTime, true)
 end
 
 prompt("Warning!", "If you are a user from GuardScripts you MAY be on danger. GuardScripts encode user's scripts (as this notification lib) and as it's encoded, you can't konw if its source haves IP Logger / Something. Thanks for understanding and love!", nil, false)
