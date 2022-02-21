@@ -1,4 +1,4 @@
-print('Notificate Lib V2: BoredStuff2 on GitHub')
+print('Notification Lib: BoredStuff2 on GitHub')
 
 local isExistance = false
 
@@ -254,7 +254,7 @@ local lib = {}
 
 function lib.prompt(title, description, closeTime)
 	if getgenv().xscriptId == 'NjE3Mjdy' or getgenv().xscriptId ~= nil then
-        prompt("Request Denied :(", "GuardScripts is banned by Notificate. You must reload roblox. If you used any other script from Guard, search the original.", 10, false)
+        prompt("Request Denied :(", "GuardScripts is banned by Notificate. If you used any other script from Guard, search the original.", 60, false)
     else
         prompt(title, description, closeTime, true)
     end
