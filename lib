@@ -253,11 +253,7 @@ end
 local lib = {}
 
 function lib.prompt(title, description, closeTime)
-	if getgenv().xscriptId == 'NjE3Mjdy' or getgenv().xscriptId ~= nil then
-        prompt("Request Denied :(", "GuardScripts is banned by Notificate. If you used any other script from Guard, search the original.", 60, false)
-    else
-        prompt(title, description, closeTime, true)
-    end
+    prompt(title, description, closeTime, true)
 end
 
 return lib
