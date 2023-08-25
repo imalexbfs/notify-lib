@@ -1,5 +1,3 @@
-print('Notification Lib: BoredStuff2 on GitHub')
-
 local isExistance = false
 
 local Notifyt = Instance.new("ScreenGui")
@@ -189,15 +187,11 @@ Notification.AutomaticSize = Enum.AutomaticSize.Y
 Container.AutomaticSize = Enum.AutomaticSize.Y
 Body.AutomaticSize = Enum.AutomaticSize.Y
 
--- remove clones: 
-
 if isExistance then
 	UIListLayout:Destroy()
 	UIPadding:Destroy()
 	Container:Destroy()
 end
-
--- script converted by saypotato
 
 local T = game:GetService('TweenService')
 local t = TweenInfo.new(0.5, Enum.EasingStyle.Quint)
@@ -217,7 +211,6 @@ function prompt(title, text, closeTime, close)
 
 	T:Create(Prompt.Container, t, {Position = UDim2.new(0, 0, 0, 0)}):Play()
 
-	-- auto size
 	Prompt.AutomaticSize = Enum.AutomaticSize.Y
 	Prompt.Container.AutomaticSize = Enum.AutomaticSize.Y
 	Prompt.Container.Body.AutomaticSize = Enum.AutomaticSize.Y
