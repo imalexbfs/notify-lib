@@ -170,6 +170,7 @@ Content.Font = Enum.Font.Gotham
 Content.Text = "Message Here. This is an example message prompt."
 Content.TextColor3 = Color3.fromRGB(230, 230, 230)
 Content.TextSize = 14.000
+Content.RichText = true
 Content.TextWrapped = true
 Content.TextXAlignment = Enum.TextXAlignment.Left
 Content.TextYAlignment = Enum.TextYAlignment.Top
